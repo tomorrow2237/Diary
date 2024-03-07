@@ -1,4 +1,3 @@
-import { PrismaClient } from "@prisma/client/extension";
 import CardList from "./components/CardList";
 import BBSData from "./types/types";
 

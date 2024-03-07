@@ -1,4 +1,4 @@
-import { Card,CardHeader,CardTitle,CardDescription,CardContent,CardFooter } from "@/components/ui/card";
+import { Card,CardHeader,CardTitle,CardDescription,CardFooter } from "@/components/ui/card";
 import Link from "next/link";
 import BBSDataType from "../types/types";
 
@@ -14,7 +14,7 @@ const BBSCard = ({bbsData}: {bbsData:BBSDataType[]}) => {
             </CardHeader>
             <CardFooter className="flex justify-between">
             <Link href={`/bbs-posts/${id}`} className="text-blue-500">
-                Read More
+                More Detail
             </Link>
             </CardFooter>
         </Card>

@@ -20,14 +20,14 @@ import { z } from "zod";
 export const formSchema = z.object({
   username: z
     .string()
-    .min(2, { message: "ユーザー名は2文字以上で入力してください。" }),
+    .min(2, { message: "User name must be at least 2 characters." }),
   title: z
     .string()
-    .min(2, { message: "タイトルは2文字以上で入力してください。" }),
+    .min(2, { message: "Title must be at least 2 characters." }),
   content: z
     .string()
-    .min(10, { message: "本文は10文字以上で入力してください。" })
-    .max(1000, { message: "本文は1000文字以内で入力してください。" }),
+    .min(10, { message: "Please enter at least 10 characters for the body text." })
+    .max(2000, { message: "Please enter up to 2000 characters for the body of the text." }),
 });
 
 const CreateBBSPage = () => {
@@ -70,9 +70,9 @@ const CreateBBSPage = () => {
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>ユーザー名</FormLabel>
+              <FormLabel>User Name</FormLabel>
               <FormControl>
-                <Input placeholder="ユーザー名" {...field} />
+                <Input placeholder="User Name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -83,9 +83,9 @@ const CreateBBSPage = () => {
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>タイトル</FormLabel>
+              <FormLabel>Title</FormLabel>
               <FormControl>
-                <Input placeholder="タイトル" {...field} />
+                <Input placeholder="Title" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -96,15 +96,14 @@ const CreateBBSPage = () => {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>本文</FormLabel>
+              <FormLabel>Body Text</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="投稿内容"
+                  placeholder="Body Text"
                   className="resize-none"
                   {...field}
                 />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
